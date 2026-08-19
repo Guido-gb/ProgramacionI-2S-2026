@@ -89,4 +89,53 @@ public class Funciones {
 		
 		return nuevo;
 	}
+	
+	public static int cantidadDeRepetidos(int[] a) {
+		int cont=0;
+		for(int i=0;i<a.length;i++) {
+			if(cantApariciones(a, a[i]) > 1) {
+				cont++;
+			}
+		}
+		
+		return cont;
+	}
+	
+	
+	public static int cantApariciones(int[] a, int num) {
+		int cont=0;
+		
+		for(int i=0;i<a.length;i++) {
+			if(a[i] == num) {
+				cont++;
+			}
+		}
+		
+		return cont;
+	}
+	
+	public static int[] sinRepetidos(int[] a) {
+		int[] aux = new int[a.length];
+		int k =0;
+		boolean bandera;
+		for(int i=0;i<a.length-1;i++) {
+			bandera = false;
+			for(int j=i+1;j<a.length;j++) {
+				if(a[i] == a[j]) {
+					bandera = true;
+				}
+			}
+			if(!bandera) {
+				aux[k] = a[i];
+				k++;
+			}
+		}
+		aux[k] = a[a.length-1];
+		int[] salida = new int[k+1];
+		for(int i=0;i<k+1;i++) {
+			salida[i] = aux[i];
+		}
+		return salida;
+	}
+	
 }

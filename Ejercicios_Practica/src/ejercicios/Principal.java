@@ -27,7 +27,9 @@ public class Principal {
 		System.out.println(ejemplo);
 		System.out.println(ejemplo4);
 		*/
-		int[] resultado = Funciones.rango(5, 10);
+		int[] resultado = {1,20,56,567,12,96,754,1,1,1,1,1,1,20};
 		Funciones.imprimirArray(resultado);
+		int[] resul = Funciones.sinRepetidos(resultado);
+		Funciones.imprimirArray(resul);
 	}
 }
