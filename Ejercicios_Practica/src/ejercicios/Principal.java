@@ -26,10 +26,12 @@ public class Principal {
 		Funciones.imprimirArray(ejemplo4);
 		System.out.println(ejemplo);
 		System.out.println(ejemplo4);
-		*/
+		
 		int[] resultado = {1,20,56,567,12,96,754,1,1,1,1,1,1,20};
-		Funciones.imprimirArray(resultado);
-		int[] resul = Funciones.sinRepetidos(resultado);
-		Funciones.imprimirArray(resul);
+		FuncionesArrays.imprimirArray(resultado);
+		int[] resul = FuncionesArrays.sinRepetidos(resultado);
+		FuncionesArrays.imprimirArray(resul);
+		*/
+		System.out.println(FuncionesRecursion.reverso("casa"));
 	}
 }
