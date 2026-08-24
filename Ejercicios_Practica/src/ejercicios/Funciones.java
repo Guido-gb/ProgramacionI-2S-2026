@@ -10,6 +10,7 @@ public class Funciones {
 	
 	// Suma dos numeros enteros
 	public static int suma(int num1, int num2) {
+		
 		return num1 + num2;
 	}
 	
