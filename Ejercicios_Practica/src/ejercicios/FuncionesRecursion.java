@@ -47,5 +47,42 @@ public class FuncionesRecursion {
 		return reverso(resto(s)) + s.charAt(0);
 	}
 	
+	public static String combinar(String s, String t) {
+		if(s.isEmpty() || t.isEmpty()) {
+			return t + s;
+		}
+		if(s.charAt(0) < t.charAt(0)) {
+			return s.charAt(0) + combinar(s.substring(1), t.substring(1));
+		}
+		return t.charAt(0) + combinar(s.substring(1), t.substring(1));
+	}
 	
+	public static boolean esAbecedaria(String s, int cont) {
+		s = s.toLowerCase().replace('ñ', 'n').replace('á', 'a')
+				.replace('é', 'e').replace('í', 'i')
+				.replace('ó', 'o').replace('ú', 'u');
+		if(s.length() <= 1) {
+			System.out.println(cont);
+			return true;
+		}
+		
+		if(s.charAt(0) <= s.charAt(1)) {
+			return esAbecedaria(s.substring(1),cont+1);
+		}
+		return false;
+	}
+	
+	public static boolean esAbecedaria(String s) {
+		return esAbecedaria(s, 0);
+	}
 }
+
+
+
+
+
+
+
+
+
+

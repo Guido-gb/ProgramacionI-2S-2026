@@ -32,6 +32,6 @@ public class Principal {
 		int[] resul = FuncionesArrays.sinRepetidos(resultado);
 		FuncionesArrays.imprimirArray(resul);
 		*/
-		System.out.println(FuncionesRecursion.reverso("casa"));
+		System.out.println(FuncionesRecursion.esAbecedaria("cenó"));
 	}
 }
