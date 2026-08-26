@@ -3,8 +3,8 @@ package parciales;
 
 public class Recursion {
 	public static void main(String[] args) {
-		String prueba = "ddddfff";
-		System.out.println(cambiarConsonante(prueba,'Z'));
+		String prueba = "codigo";
+		System.out.println(invertirDesde(prueba,6));
 	}
 	
 	public static String espejar(String s) {
@@ -92,8 +92,22 @@ public class Recursion {
 			return s;
 		}
 		if(!esVocal(s.charAt(0)) && !esVocal(s.charAt(1))) {
-			return "" + s.charAt(0) + r + cambiarConsonante(s.substring(2), r);
+			return "" + s.charAt(0) + r 
+					+ cambiarConsonante(s.substring(2), r);
 		}
 		return s.charAt(0) + cambiarConsonante(s.substring(1),r);
 	}
+	
+	public static String invertirDesde(String s, int pos) {
+		if(s.isEmpty()){
+			return s;
+		}
+		if(pos > 0) {
+			return s.charAt(0) + invertirDesde(s.substring(1), pos-1);
+		}
+		return invertirDesde(s.substring(1), pos) + s.charAt(0);
+	}
 }
+
+
+
