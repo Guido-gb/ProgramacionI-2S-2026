@@ -3,8 +3,8 @@ package parciales;
 
 public class Recursion {
 	public static void main(String[] args) {
-		String prueba = "xax";
-		System.out.println(eliminarLetraEntreIguales(prueba,'z'));
+		String prueba = "ddddfff";
+		System.out.println(cambiarConsonante(prueba,'Z'));
 	}
 	
 	public static String espejar(String s) {
@@ -86,8 +86,14 @@ public class Recursion {
 		return s.charAt(0) 
 				+ eliminarLetraEntreIguales(s.substring(1), a);
 	}
+	
+	public static String cambiarConsonante(String s, char r) {
+		if(s.length() < 2) {
+			return s;
+		}
+		if(!esVocal(s.charAt(0)) && !esVocal(s.charAt(1))) {
+			return "" + s.charAt(0) + r + cambiarConsonante(s.substring(2), r);
+		}
+		return s.charAt(0) + cambiarConsonante(s.substring(1),r);
+	}
 }
-
-
-
-
