@@ -15,6 +15,38 @@ public class Funciones {
 		return cont;
 	}
 	
+	// Ejercicio 23
+	
+	static boolean puedenColocarse(String a, String b, String c) {
+		int posA = sePuedenCruzar(b, a);
+		if(posA < 0) {
+			return false;
+		}
+		int posC = sePuedenCruzar(b, c);
+		if(posC < 0) {
+			return false;
+		}
+		if(posA >= posC) {
+			return false;
+		}
+		if(posC - posA < 2) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public static int sePuedenCruzar(String ver,String hor) {
+		
+		for(int i=0;i<ver.length();i++) {
+			if(hor.indexOf(ver.charAt(i)) >= 0) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	
 	
 	//Dice si un caracter es vocal o no
 	public static boolean esVocal(char caracter) {

@@ -32,7 +32,10 @@ public class Principal {
 		FuncionesArrays.imprimirArray(resultado);
 		int[] resul = FuncionesArrays.sinRepetidos(resultado);
 		FuncionesArrays.imprimirArray(resul);
-		*/
 		System.out.println(FuncionesRecursion.esAbecedaria("cenó"));
+		*/
+		int[] n = {1,2,5,10};
+		String palabra = "Hola como estas";
+		FuncionesRecursion.imprimirApariciones(palabra);
 	}
 }

@@ -75,14 +75,65 @@ public class FuncionesRecursion {
 	public static boolean esAbecedaria(String s) {
 		return esAbecedaria(s, 0);
 	}
+	
+	public static int sumarElementos(int[] elementos,int pos) {
+		if(elementos.length == pos) {
+			return 0;
+		}
+		return elementos[pos] + sumarElementos(elementos, pos+1);
+	}
+	
+	public static int sumarElementos(int[] elementos) {
+		return sumarElementos(elementos, 0);	
+	}
+	
+	public static boolean buscarElemento(int[] a, int item) {
+		return buscarElemento(a, item,0);
+	}
+
+	public static boolean buscarElemento(int[] a, int item, int pos) {
+		if(a.length == pos) {
+			return false;
+		}
+		if(a[pos] == item) {
+			return true;
+		}
+		return buscarElemento(a, item, pos+1);
+	}
+	
+	public static int max(int[] a) {
+		return max(a,0,a[0]);
+	}
+
+	public static int max(int[] a, int pos, int max) {
+		if(pos == a.length) {
+			return max;
+		}
+		if(a[pos] > max) {
+			max = a[pos];
+		}
+		return max(a, pos+1, max);
+	}
+	
+	public static void imprimirApariciones(String s) {
+		if(s.isEmpty()) {
+			return;
+		}
+		int cantApariciones = cantidadDeApariciones(s, s.charAt(0));
+		System.out.println(s.charAt(0) + " aparece " 
+		+ cantApariciones 
+		+ (cantApariciones>1 ? " veces." : " vez."));
+		imprimirApariciones(s.replace(("" + s.charAt(0)), ""));
+	}
+	
+	public static int cantidadDeApariciones(String s, char c) {
+		if(s.isEmpty()) {
+			return 0;
+		}
+		if(s.charAt(0) == c) {
+			return 1 + cantidadDeApariciones(s.substring(1), c);
+		}
+		return cantidadDeApariciones(s.substring(1), c);
+	}
+	
 }
-
-
-
-
-
-
-
-
-
-
