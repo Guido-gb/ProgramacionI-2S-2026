@@ -57,7 +57,7 @@ public class Principal {
         Point p1 = new Point(Math.max(r1.x,r2.x),Math.max(r1.y,r2.y));
         Point p2 = new Point(Math.min(r1.x + r1.width,r2.x + r2.width),Math.min(r1.y + r1.height,r2.y+r2.height));
         
-        pizarra.dibujar(r1);
+        pizarra.dibujar(Funciones.intersección(r1, r2));
         pizarra.dibujar(r2);
         pizarra.dibujar(p1);
         pizarra.dibujar(p2);

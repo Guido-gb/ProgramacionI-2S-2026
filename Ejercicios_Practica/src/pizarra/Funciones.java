@@ -64,6 +64,9 @@ public class Funciones {
 		int y = Math.max(r1.y,r2.y);
 		int ancho = Math.min(r1.x + r1.width,r2.x + r2.width) - x;
 		int alto = Math.min(r1.y + r1.height,r2.y+r2.height) - y;
+		if(ancho < 0 || alto < 0) {
+			return null;
+		}
 		return new Rectangle(x,y,ancho,alto);
 	}
 	
