@@ -27,8 +27,8 @@ public class Funciones {
 	
 	// La función debe indicar si el punto p está dentro del rectángulo r.
 	
-	public static boolean estáDentro(Point p, Rectangle r) {
-		return p.x > r.x && r.x < r.x + r.width && p.y > r.y && p.y < r.y +r.height;
+	public static boolean estaAdentro(Point p, Rectangle r) {
+		return p.x >= r.x && r.x <= r.x + r.width && p.y >= r.y && p.y <= r.y +r.height;
 	}
 	
 	// La función devuelve un nuevo punto que se encuentra en el medio del segmento que une a p1 con p2.
@@ -43,19 +43,24 @@ public class Funciones {
 	// a los dos rectángulos pasados como parámetros.
 	
 	public static Rectangle encuadrar(Rectangle r1, Rectangle r2) {
-		return null;
+		int x = Math.min(r1.x, r2.x);
+		int y = Math.min(r1.y, r2.y);
+		int ancho = Math.max(r1.x + r1.width, r2.x + r2.width) - x;
+		int alto = Math.max(r1.y + r1.height , r2.y + r2.height) - y;
+		return new Rectangle(x,y,ancho,alto);
 	}
 	
 	// La función debe indicar si el rectangulo r1 está contenido completamente dentro del rectángulo r2.
 	
-	public static boolean estáContenido(Rectangle r1, Rectangle r2) {
-		return false;
+	public static boolean estaContenido(Rectangle r1, Rectangle r2) {
+		return estaAdentro(new Point(r1.x,r1.y), r2) && estaAdentro(new Point(r1.x + r1.width, r1.y + r1.height), r2);
 	}
 	
 	// (Ejercicio desafío) La función debe devolver el rectángulo contenido en ambos rectángulos r1 y r2.
 	// En caso de que no se intersequen debe devolver null.
 	
 	public static Rectangle intersección(Rectangle r1, Rectangle r2) {
+		
 		return null;
 	}
 	

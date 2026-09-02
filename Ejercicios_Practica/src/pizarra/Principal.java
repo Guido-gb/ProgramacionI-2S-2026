@@ -52,15 +52,16 @@ public class Principal {
         System.out.println("El punto del medio de afuera y centro es " + medio);
         
         */
-        Rectangle r1 = new Rectangle(100,50,100,200);
-        Rectangle r2 = new Rectangle(300,250,200,200);
-        r1.translate(300, 100);
-        Point p1 = new Point(Math.min(r1.x, r2.x),Math.min(r1.y, r2.y));
-        
+        Rectangle r1 = new Rectangle(10,10,100,350);
+        Rectangle r2 = new Rectangle(100,50,400,250);
+        Point p1 = new Point(r1.x,r1.y);
+        Point p2 = new Point(r1.x + r1.width, r1.y + r1.height);
         
         pizarra.dibujar(r1);
         pizarra.dibujar(r2);
         pizarra.dibujar(p1);
+        pizarra.dibujar(p2);
+        System.out.println("r1 esta adentro de r2? " + Funciones.estaContenido(r1, r2));
         
         teclado.close();
         
