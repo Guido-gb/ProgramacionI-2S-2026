@@ -60,8 +60,11 @@ public class Funciones {
 	// En caso de que no se intersequen debe devolver null.
 	
 	public static Rectangle intersección(Rectangle r1, Rectangle r2) {
-		
-		return null;
+		int x = Math.max(r1.x,r2.x);
+		int y = Math.max(r1.y,r2.y);
+		int ancho = Math.min(r1.x + r1.width,r2.x + r2.width) - x;
+		int alto = Math.min(r1.y + r1.height,r2.y+r2.height) - y;
+		return new Rectangle(x,y,ancho,alto);
 	}
 	
 	
