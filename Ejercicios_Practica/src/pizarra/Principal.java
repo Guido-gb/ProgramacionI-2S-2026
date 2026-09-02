@@ -11,7 +11,7 @@ public class Principal {
         // 1. Iniciar la pizarra
         PizarraGeometrica pizarra = PizarraGeometrica.crearPizarra();
 
-        // 2. Crear y enviar figuras iniciales
+        /*
         Point p1 = new Point(100, 100);
         Point p2 = new Point(300, 300);
         Point p3 = new Point(100,300);
@@ -31,6 +31,39 @@ public class Principal {
         pizarra.actualizar();
         
         System.out.println("La Diagonal de r1 es " + Funciones.diagonal(r1));
+        
+        Rectangle r = new Rectangle(100,100,100,300);
+        
+        pizarra.dibujar(r);
+        
+        Point centro = Funciones.centro(r);
+        Point afuera = new Point (400,500);
+        
+        pizarra.dibujar(centro);
+        pizarra.dibujar(afuera);
+        
+        System.out.println("El punto centro esta adentro? " + Funciones.estáDentro(centro, r));
+        System.out.println("El punto afuera esta adentro? " + Funciones.estáDentro(afuera, r));
+        
+        Point medio = Funciones.puntoMedio(afuera, centro);
+        
+        pizarra.dibujar(medio);
+        
+        System.out.println("El punto del medio de afuera y centro es " + medio);
+        
+        */
+        Rectangle r1 = new Rectangle(100,50,100,200);
+        Rectangle r2 = new Rectangle(300,250,200,200);
+        r1.translate(300, 100);
+        Point p1 = new Point(Math.min(r1.x, r2.x),Math.min(r1.y, r2.y));
+        
+        
+        pizarra.dibujar(r1);
+        pizarra.dibujar(r2);
+        pizarra.dibujar(p1);
+        
         teclado.close();
+        
+      
     }
 }
