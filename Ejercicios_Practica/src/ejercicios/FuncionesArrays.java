@@ -54,7 +54,7 @@ public class FuncionesArrays {
 			System.out.println("ingrese el numero " + (i+1) + " de " + n);
 			nuevo[i] = teclado.nextInt();
 		}
-		
+		teclado.close();
 		return nuevo;
 	}
 	
