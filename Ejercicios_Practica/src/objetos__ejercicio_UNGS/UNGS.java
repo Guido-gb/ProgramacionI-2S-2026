@@ -1,4 +1,4 @@
-package objetos__ejercicio;
+package objetos__ejercicio_UNGS;
 
 public class UNGS {
 	Comision[] comisiones;
