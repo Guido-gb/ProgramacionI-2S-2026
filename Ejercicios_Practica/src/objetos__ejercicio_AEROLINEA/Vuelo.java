@@ -11,5 +11,23 @@ public class Vuelo {
 		}
 		return false;
 	}
+
+	public int cantInspectores() {
+		int cont=0;
+		for(Tripulante t:this.tripulacion) {
+			if(t.cargo.equals("Inspector"))
+				cont++;
+		}
+		return cont;
+	}
+
+	public int cantAeromozos() {
+		int cont=0;
+		for(Tripulante t:this.tripulacion) {
+			if(t.cargo.equals("Aeromozo"))
+				cont++;
+		}
+		return cont;
+	}
 }
  
