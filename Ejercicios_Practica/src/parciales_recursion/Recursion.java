@@ -3,8 +3,37 @@ package parciales_recursion;
 
 public class Recursion {
 	public static void main(String[] args) {
-		String prueba = "lago";
-		System.out.println(eliminarConsonantesParesDesde(prueba,0));
+		String va = "";
+		System.out.println(va.substring(0));
+		System.out.println(eliminarSegunPosicion("",4));
+	}
+	
+	public static String eliminarSegunPosicion(String s, int n) {
+		if(s.isEmpty()) {
+			return s;
+		}
+		if(n > 0) {
+			if(esVocal(s.charAt(0))) {
+				return eliminarSegunPosicion(s.substring(1), n-1);
+			}
+			return s.charAt(0) + eliminarSegunPosicion(s.substring(1), n-1);
+		}
+		
+		if(!esVocal(s.charAt(0))) {
+			return eliminarSegunPosicion(s.substring(1), n-1);
+		}
+		return s.charAt(0) + eliminarSegunPosicion(s.substring(1), n-1);
+		
+	}
+	
+	public static String cambiarEn(String s, char c, int n) {
+		if(s.isEmpty()) {
+			return s;
+		}
+		if(n == 0) {
+			return c + s.substring(1);
+		}
+		return s.charAt(0) + cambiarEn(s.substring(1),c,n-1);
 	}
 	
 	public static String espejar(String s) {
