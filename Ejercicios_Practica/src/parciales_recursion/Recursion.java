@@ -1,4 +1,4 @@
-package parciales;
+package parciales_recursion;
 
 
 public class Recursion {
