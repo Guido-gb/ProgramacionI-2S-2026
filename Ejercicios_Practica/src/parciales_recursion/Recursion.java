@@ -3,9 +3,31 @@ package parciales_recursion;
 
 public class Recursion {
 	public static void main(String[] args) {
-		String va = "";
-		System.out.println(va.substring(0));
-		System.out.println(eliminarSegunPosicion("",4));
+		System.out.println(retornarRangoInvertido("abcdefghijk",3,8));
+	}
+	
+	public static String retornarRangoInvertido (String s, int n, int m) {
+		if(s.isEmpty()) {
+			return "";
+		}
+		if(n > 0) {
+			return retornarRangoInvertido(s.substring(1), n-1, m-1);
+		}
+		if(n ==0 && m >= 0) {
+			return retornarRangoInvertido(s.substring(1), 0, m-1) + s.charAt(0);
+		}
+		return "";
+	}
+	
+	public static String moverVocalesAlFinal(String s) {
+		if(s.isEmpty()) {
+			return s;
+		}
+		if(esVocal(s.charAt(0))) {
+			return moverVocalesAlFinal(s.substring(1)) + s.charAt(0);
+		}
+		return s.charAt(0) + moverVocalesAlFinal(s.substring(1));
+		
 	}
 	
 	public static String eliminarSegunPosicion(String s, int n) {
