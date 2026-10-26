@@ -64,6 +64,7 @@ public class Pruebas {
         }else {
         	System.out.println("Perdiste");
         }
+        scan.close();
     }
 }
 

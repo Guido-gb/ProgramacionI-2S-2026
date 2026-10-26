@@ -29,7 +29,7 @@ public class Dibujador extends Panel
 	}
 
 	/**
-	 * Construye un dibujador con tamaño por defecto (800 x 800). 
+	 * Construye un dibujador con tamaï¿½o por defecto (800 x 800). 
 	 */
 	public Dibujador(){
 		super();
@@ -52,7 +52,7 @@ public class Dibujador extends Panel
 	};
 	
 	/**
-	 * Devuelve el alto del dibujador en píxeles.
+	 * Devuelve el alto del dibujador en pï¿½xeles.
 	 */
 	public int alto()
 	{
@@ -60,7 +60,7 @@ public class Dibujador extends Panel
 	}
 	
 	/**
-	 * Devuelve el ancho del dibujador en píxeles.
+	 * Devuelve el ancho del dibujador en pï¿½xeles.
 	 */
 	public int ancho()
 	{
@@ -77,9 +77,9 @@ public class Dibujador extends Panel
 	}
 	
 	/**
-	 * Dibuja una línea en el dibujador entre las coordenadas dadas.
-	 * @param desde Punto de inicio de la línea
-	 * @param hasta Punto de final de la línea
+	 * Dibuja una lï¿½nea en el dibujador entre las coordenadas dadas.
+	 * @param desde Punto de inicio de la lï¿½nea
+	 * @param hasta Punto de final de la lï¿½nea
 	 */
 	public void dibujarLinea(Punto desde, Punto hasta) 
 	{
@@ -92,7 +92,7 @@ public class Dibujador extends Panel
 	 * Fabrica un dibujador en el cual se carga la imagen dada y se muestra la misma en el dibujador.
 	 * @param img
 	 */
-	static public void dibujar(Imagen img) 
+	public void dibujar(Imagen img) 
 	{
 		Dibujador dib = new Dibujador(img.alto, img.ancho);
 		dib.cargar(img);

@@ -23,37 +23,30 @@ public class Principal {
 				c.nextLine();
            }
 		}
+		c.close();
 		
 	}
 
 	static void ordenarPorInsercion(int a[]) 
 	{
-		Scanner c = new Scanner(System.in);
 	      for (int i = 1; i < a.length; i++) 
 	      {
-	    	  mostrar(a);
-	    	  c.nextLine();
-	    	  
-	            int pos = 0;
-	            while (pos < i && a[pos] < a[i])
-	                  pos++;
+	    	  int pos = 0;
+	          while (pos < i && a[pos] < a[i])
+	                pos++;
 	               
-	            int temp = a[i];
-	            for (int j = i-1; j >= pos; j--)
-	                  a[j+1] = a[j];
+	          int temp = a[i];
+	          for (int j = i-1; j >= pos; j--)
+	                a[j+1] = a[j];
 
-	             a[pos] = temp;
+	          a[pos] = temp;
 	       }
-	      mostrar(a);
 	}
 	
 	static void ordenarPorSeleccion(int a[]) 
 	{
-		Scanner c = new Scanner(System.in);
 	      for (int i = 0; i < a.length - 1; i++) 
 	      {
-	    	  mostrar(a);
-	    	  c.nextLine();
 	            int menor = i;
 	            for (int j = i + 1; j < a.length; j++) 
 	            {
@@ -63,7 +56,6 @@ public class Principal {
 
 	            swap(a, i, menor);
 	      }
-	      mostrar(a);
 	}
 
 	
