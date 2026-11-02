@@ -79,4 +79,66 @@ public class ListaInt {
 			actual.siguiente = actual.siguiente.siguiente;
 		}
 	}
+	
+	public int mayorPar() {
+		int mayor = 0;
+		NodoInt a = this.primero;
+		while(a != null) {
+			if(a.elemento % 2 == 0 && a.elemento > mayor){
+				mayor = a.elemento;
+			}
+			a = a.siguiente;
+		}
+		return mayor;
+	}
+	
+	public ListaInt generarMenoresAlMayorPar1() {
+		int mayor = this.mayorPar();
+		ListaInt salida = new ListaInt();
+		NodoInt a = this.primero;
+		while(a != null) {
+			if(a.elemento < mayor) {
+				salida.agregarAdelante(a.elemento);
+			}
+			a = a.siguiente;
+		}
+		return salida;
+	}
+	
+	public ListaInt generarMenoresAlMayorPar2() {
+		int mayor = this.mayorPar();
+		ListaInt salida = new ListaInt();
+		NodoInt a = this.primero;
+		NodoInt b = null;
+		while(a != null) {
+			if(a.elemento < mayor) {
+				NodoInt nuevo = new NodoInt(a.elemento);
+				if(b == null) {
+					salida.primero = nuevo;
+					b = nuevo;
+				}else {
+					b.siguiente = nuevo;
+					b = nuevo;
+				}
+			}
+			a = a.siguiente;
+		}
+		return salida;
+	}
+	
+	public boolean estaEnPos(int pos, int ele) {
+		if(this.primero == null) {
+			return false;
+		} 
+		int cont =0;
+		NodoInt a = this.primero;
+		while(a != null) {
+			if(cont == pos && ele == a.elemento) {
+				return true;
+			}
+			cont++;
+			a = a.siguiente;
+		}
+		return false;	
+	}
 }
