@@ -141,4 +141,35 @@ public class ListaInt {
 		}
 		return false;	
 	}
+	
+	public void eliminarMenoresMayores(int men, int may) {
+		NodoInt a = this.primero;
+		while(a != null && a.siguiente != null) {
+			if(a.siguiente.elemento < men || a.siguiente.elemento > may) {
+				a.siguiente = a.siguiente.siguiente;
+				// si borro no avanzo
+			}else {
+				a = a.siguiente;
+			}
+		}
+		if(this.primero.elemento < men || this.primero.elemento > may) {
+			this.primero = this.primero.siguiente;
+		}
+	}
+	
+	public int nodosMayoresA(int m) {
+		NodoInt a = this.primero;
+		int cont = 0;
+		while(a != null) {
+			if(a.elemento > m) {
+				cont++;
+			}
+			a = a.siguiente;
+		}
+		return cont;
+	}
+	
+	
+	
+	
 }
