@@ -3,6 +3,109 @@ package listas;
 public class ListaInt {
 	NodoInt primero;
 	
+	
+	
+	public ListaInt obtenerMenoresAlPromedioPares() {
+		double promedio = this.promedioPares();
+		NodoInt a = this.primero;
+		ListaInt salida = new ListaInt();
+		NodoInt b = null; // puntero ultimo a lista salida
+		while(a != null) {
+			if(a.elemento < promedio) {
+				NodoInt nuevo = new NodoInt(a.elemento);
+				if(b == null) {
+					salida.primero = nuevo;
+				}else {
+					b.siguiente = nuevo;
+				}
+				b = nuevo;
+			}
+			a = a.siguiente;
+		}
+		return salida;
+	}
+	
+	public double promedioPares() {
+		double promedio =0;
+		int cont=0;
+		NodoInt actual = this.primero;
+		while(actual != null) {
+			if(actual.elemento % 2 == 0) {
+				promedio+=actual.elemento;
+				cont++;
+			}
+			actual = actual.siguiente;
+		}
+		return cont == 0 ? 0 : promedio / cont;
+	}
+	
+	public void eliminarEntrePos1(int d, int h) {
+		int pos=1;
+		NodoInt a = this.primero;
+		while(a != null && a.siguiente != null) {
+			if(pos >= d && pos <= h) {
+				if(a.siguiente.elemento % 2 == 0) {
+					a.siguiente = a.siguiente.siguiente;
+				}else {
+					a = a.siguiente;
+				}
+				pos++;
+			}else {
+				a = a.siguiente;
+				pos++;
+			}
+		}
+	}
+	
+	public void eliminarEntrePos2(int d, int h) {
+		int pos=1;
+		NodoInt a = this.primero;
+		while(a != null && a.siguiente != null) {
+			if(pos >= d && pos <= h && a.siguiente.elemento % 2 == 0) {
+				a.siguiente = a.siguiente.siguiente;
+			}else {
+				a = a.siguiente;
+			}
+			pos++;
+		}
+		if(d == 0 && this.primero.elemento % 2 == 0) {
+			this.primero = this.primero.siguiente;
+		}
+	}
+	
+	//recorta todos los nodos antes de "d" y despues de "h"
+	public void recortarFuerade(int d, int h) {
+		int pos = 1;
+		NodoInt a = this.primero;
+		while(a.siguiente != null) {
+			if(pos < d || pos > h) {
+				a.siguiente = a.siguiente.siguiente;
+			}else {
+				a = a.siguiente;
+			}
+			pos++;
+		}
+		if(d != 0) {
+			this.primero = this.primero.siguiente;
+		}
+	}
+	
+	public void recortarFuerade2(int d, int h) {
+		int pos = 0;
+		NodoInt a = this.primero;
+		while(a != null) {
+			if(pos == d) {
+				this.primero = a;
+			}
+			if(pos == h) {
+				a.siguiente= null;
+			}
+			a = a.siguiente;
+			pos++;
+		}
+	} 
+	
+	
 	public void imprimir(){
 	      System.out.print("[");
 	      NodoInt actual = this.primero;
